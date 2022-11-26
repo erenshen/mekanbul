@@ -8,8 +8,8 @@
 ### [3. Bir Mekana Ait Belirli Bir Yorumu Getir](https://mekanbul5.erensenn.repl.co/api/mekanlar/637cf365b8127395089309a6/yorumlar/637cf372bb4ccf1c298e3901)
 ![3](./resimler/yorumlar.png)
 
-### [4.Thunder Client Test]
+### 4.Thunder Client Test
 ![4](./resimler/run_all.png)
 
-### [5.API Test]
+### 5.API Test
 ![5](./resimler/npm_run_test.png)
