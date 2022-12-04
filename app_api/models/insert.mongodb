@@ -1,18 +1,18 @@
-const database = 'mekanbul';
+const database = 'test';
 use(database);
 db.mekanlar.insertOne(
 {
-  "ad": "Starbucks",
+  "ad": "Osmanlı Kahvecisi",
   "adres": "Centrum Garden",
   "puan": 5,
   "imkanlar": [
     "çay",
     "kahve",
-    "pasta"
+    "kurabiye"
   ],
   "koordinat": [
-    37.83226584629666,
-    30.524732239878013
+    39,
+    35
   ],
   "saatler": [
     {
