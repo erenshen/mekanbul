@@ -114,7 +114,7 @@ const yorumumuEkle = function (req, res) {
   } else {
     gonderilenYorum = {
       yorumYapan: req.body.adsoyad,
-      puan: req.body.puan,
+      puan: parseInt(req.body.puan, 10),
       yorumMetni: req.body.yorum,
     };
     axios
@@ -125,7 +125,7 @@ const yorumumuEkle = function (req, res) {
       .then(function() {
         res.redirect("/mekan/" + mekanid);
       })
-      .catch(function() {
+      .catch(function(hata) {
         hataGoster(req, res, hata);
       });
   }
