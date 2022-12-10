@@ -97,11 +97,11 @@ const mekanBilgisi = function (req, res) {
 };
 const yorumEkle = function (req, res) {
   var mekanAdi = req.session.mekanAdi;
-  var mekanid = req.params.mekanid;
+  mekanid = req.params.mekanid;
   if (!mekanAdi) {
     res.redirect("/mekan/" + mekanid);
-  } else
-    res.render('yorumekle', { "baslik": mekanAdi + " mekanına yorum ekle ", title: "Yorum ekle" });
+  } else res.render("yorumekle", {
+     "baslik": mekanAdi + " mekanına yorum ekle ", title: "Yorum ekle" });
 };
 
 const yorumumuEkle = function (req, res) {
@@ -110,7 +110,7 @@ const yorumumuEkle = function (req, res) {
   if (!req.body.adsoyad || !req.body.yorum) {
     res.redirect("/mekan/" + mekanid + "/yorum/yeni?hata=evet");
   }
-  else
+  else{
     gonderilenYorum = {
       yorumYapan: req.body.adsoyad,
       puan: req.body.puan,
@@ -119,13 +119,16 @@ const yorumumuEkle = function (req, res) {
   axios
     .post(
       apiSecenekleri.sunucu + apiSecenekleri.apiYolu + mekanid + "/yorumlar",
-      gonderilenYorum)
+      gonderilenYorum
+    )
     .then(function () {
       res.redirect("/mekan/" + mekanid);
     })
     .catch(function (hata) {
       hataGoster(req, res, hata);
     });
+
+  }
 };
 module.exports = {
   anaSayfa,

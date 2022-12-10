@@ -1,7 +1,7 @@
 $('#yorumEkle').submit(function (e) {
   $('.alert.alert-danger').hide();
-  if (!$('input#name').val() ||
-    !$('textarea#review').val()) {
+  if (!$('input#name').val().trim() ||
+    !$('textarea#review').val().trim()) {
     if ($('.alert.alert-danger').length) {
       $('.alert.alert-danger').show();
     } else {
